@@ -1,0 +1,34 @@
+<h1>Welcome to Building {{buildingNo}} and RoomNo {{roomNo}}</h1>
+
+<div *ngIf='room'>
+    <form #roomForm='ngForm' (ngSubmit)='onSubmit()'>
+        <div class='form-group'>
+            <label>RoomNo : </label>
+            <input class='form-control' type='text' name='roomNo' [(ngModel)]='room.roomNo' disabled>
+        </div>
+        <div class='form-group'>
+            <label>username : </label>
+            <input class='form-control' type='text' name='userName' [(ngModel)]='room.userName'>
+        </div>      
+        <div class='form-group'>
+            <label>PAN : </label>
+            <input class='form-control' type='text' name='PAN' [(ngModel)]='room.PAN'>
+        </div>
+        <div class='form-group'>
+            <label>aadhar : </label>
+            <input class='form-control' type='text' name='aadhar' [(ngModel)]='room.aadhar'>
+        </div>  
+        <div class='form-group'>
+            <label>address : </label>
+            <input class='form-control' type='text' name='address' [(ngModel)]='room.address'>
+        </div>
+        <div class='form-group'>
+            <button class='form-control' type='button' name='delete' (click)='onDelete()'>Delete</button>
+            <button class='form-control' type='button' name='cancel' (click)='onSubmit()'>Submit</button>
+        </div>
+    </form>
+
+    <div *ngIf='message'>
+        <h2>{{message}}</h2>
+    </div>
+</div>

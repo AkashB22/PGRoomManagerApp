@@ -1,0 +1,51 @@
+<h1>Add your new room details</h1>
+<form #newRoomForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="buildingNo">Building No : </label>
+        <input class="form-control" type="text" id="buildingNo" name="buildingNo" [(ngModel)]="room.buildingNo" required #buildingNo = "ngModel">
+        <div [hidden]="buildingNo.valid || buildingNo.untouched">
+            Please enter your building number.
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="roomNo">RoomNo : </label>
+        <input class="form-control" type="text" name="roomNo" value="" id="roomNo" [(ngModel)]='room.roomNo'  required #roomNo="ngModel">
+        <div [hidden] = "roomNo.valid || roomNo.untouched">
+            Please enter a valid room number.
+        </div>
+    </div>
+    <div class="form-group">
+        <label>username : </label>
+        <input class="form-control" type="text" name="userName" [(ngModel)]="room.userName" required #userName="ngModel">
+        <div [hidden]="userName.valid || userName.untouched">
+            Please enter your username.
+        </div>
+    </div>      
+    <div class="form-group">
+        <label>PAN : </label>
+        <input class="form-control" type="text" name="PAN" [(ngModel)]="room.PAN" required #PAN="ngModel">
+        <div [hidden]="PAN.valid || PAN.untouched">
+            Please enter your PAN Id.
+        </div>
+    </div>
+    <div class="form-group">
+        <label>aadhar : </label>
+        <input class="form-control" type="text" name="aadhar" [(ngModel)]="room.aadhar" required #aadhar="ngModel">
+        <div [hidden]="aadhar.valid || aadhar.untouched">
+            Please Enter your aadhar Id.
+        </div>
+    </div>  
+    <div class="form-group">
+        <label>address : </label>
+        <input class="form-control" type="text" name="address" [(ngModel)]="room.address" required #address="ngModel">
+        <div [hidden]="address.valid||address.untouched">
+            Please enter your address.
+        </div>
+        
+    </div>
+    <div class="mx-auto" style="width: 200px;">
+        <button class="btn btn-primary btn-lg" style="width: 200px;" type="button" name="submit" [disabled]="!newRoomForm.valid" (click)="onSubmit()">Submit</button>
+    </div>
+    <h2>{{message}}</h2>
+</form>
+

@@ -1,0 +1,16 @@
+<div>
+    <h1>List of All the rooms and buliding</h1>
+    <ul *ngFor="let no of noOfBuildings">
+        <li>Building {{no}}</li>
+        <ul *ngFor = 'let room of Rooms'>
+            <div *ngIf="room.buildingNo == no">
+                <div *ngIf="room.roomNo">
+                    <li><a routerLink = '/roomDetails/{{no}}/{{room.roomNo}}'>roomNo: {{room.roomNo}}, username : {{room.userName}}</a></li> 
+                </div>  
+            </div>
+        </ul>
+    </ul>
+    <h2>Add new room details by clicking below button</h2>
+    <button><a routerLink='/addNewRoomDetails'>Add new room</a></button>
+</div>
+
