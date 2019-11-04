@@ -13,7 +13,8 @@ db.on('connect', function(){
     console.log('success on mongoose connection')
 });
 //routes
-let api = require('./routes/api')
+let api = require('./routes/api');
+let newApi = require('./routes/newApi');
 
 let app = express();
 
@@ -32,6 +33,7 @@ app.use((req, res, next)=>{
 })
 
 app.use('/api', api);
+app.use('/newapi', api);
 
 app.use(function(err, req, res, next){
     res.json({

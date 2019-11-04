@@ -1,11 +1,11 @@
 <div>
     <h1>List of All the rooms and buliding</h1>
     <ul *ngFor="let no of noOfBuildings">
-        <li>Building {{no}}</li>
+        <h4><li>Building {{no}}</li></h4>
         <ul *ngFor = 'let room of Rooms'>
             <div *ngIf="room.buildingNo == no">
                 <div *ngIf="room.roomNo">
-                    <li><a routerLink = '/roomDetails/{{no}}/{{room.roomNo}}'>roomNo: {{room.roomNo}}, username : {{room.userName}}</a></li> 
+                    <li><h5><a routerLink = '/roomDetails/{{no}}/{{room.roomNo}}'>roomNo: {{room.roomNo}}, username : {{room.userName}}</a></h5></li> 
                 </div>  
             </div>
         </ul>
